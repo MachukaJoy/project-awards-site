@@ -5,6 +5,11 @@ name = "pypi"
 
 [packages]
 django = "==2.2.8"
+python-decouple = "*"
+config = "*"
+python-dotenv = "*"
+dj-database-url = "*"
+django-heroku = "*"
 
 [dev-packages]
 
