@@ -10,6 +10,8 @@ config = "*"
 python-dotenv = "*"
 dj-database-url = "*"
 django-heroku = "*"
+django-bootstrap4 = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
