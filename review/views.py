@@ -4,8 +4,9 @@ from django.shortcuts import render
 from .forms import SignUpForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from .forms import Project, UserUpdateForm, ProfileUpdateForm
+from .forms import Project, UserUpdateForm, ProfileUpdateForm, NewProjectForm
 from django.contrib import messages
+from .models import Profile, Project
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -72,3 +73,21 @@ def update_profile(request):
         }
 
     return render(request, 'update_profile.html', context)
+
+@login_required(login_url='/accounts/login/')
+def new_project(request):
+    current_user = request.user
+
+    if request.method == 'POST':
+        form = NewProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.user = current_user
+
+            image.save()
+
+        return redirect('home')
+
+    else:
+        form = NewProjectForm()
+    return render(request, 'new_project.html', {"form": form})
