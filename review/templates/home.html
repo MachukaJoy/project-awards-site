@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 {%block content%}
-{{ block.super}}
 <h1>Awwards</h1>
+{% for project in json_projects %}
+<img width="50x" height="50px" src="{{user.profile.profile_pic.url }}" alt="image">
+
+
+<h1>
+  Title:{{project.title}}
+</h1>
+<h2>
+  project description is {{project.description}}
+</h2>
+<img width="80px" height="100px" src="{{project.image.url}}" alt="image">
+<p>link:{{project.link}}</p>
+
+<p>date;{{project.date_craeted}}</p>
+{% endfor %}
+
+
 {%endblock%}

@@ -37,5 +37,11 @@ class Project(models.Model):
     date_craeted= models.DateField(auto_now_add=True )
 
 
+    @classmethod
+    def all_projects(cls) :
+        projects = cls.objects.all()
+        return projects
+
+
     def __str__(self):
         return self.title
