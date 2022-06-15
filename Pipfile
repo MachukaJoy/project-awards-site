@@ -17,6 +17,7 @@ cloudinary = "*"
 pillow = "*"
 django-registration = "==3.1.1"
 whitenoise = "*"
+django-tinymce = "*"
 
 [dev-packages]
 
