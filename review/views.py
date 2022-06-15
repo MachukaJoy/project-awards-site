@@ -25,12 +25,11 @@ def home(request):
             link=project.link,
             description=project.description,
             avatar=pic,
-            date_craeted=project.date_craeted
-
-
+            date_craeted=project.date_craeted,
+            author=project.user.username
         )
         json_projects.append(obj)
-        print(json_projects)
+        # print(json_projects)
 
     return render(request, 'home.html', {"json_projects": json_projects})
 
@@ -113,3 +112,16 @@ def new_project(request):
     else:
         form = NewProjectForm()
     return render(request, 'new_project.html', {"form": form})
+
+def search_results(request):
+    if 'project' in request.GET and request.GET['project']:
+        search_term =request.GET.get('project')
+        searched_project = Project.search_by_title(search_term)
+        message = f'{search_term}'
+
+        return render(request, 'search.html',{"message":message,"projects":searched_project})
+
+    else:
+        message = "You haven't searched for any term"
+
+        return render(request,'search.html',{'message':message})
