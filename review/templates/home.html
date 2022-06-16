@@ -12,14 +12,17 @@
     {% endfor %} -->
 
 
-    <h1 style="  font-size:50px; margin-top:60px; color:black;">Site of the day
+    <h1 style="  font-size:50px; margin-top:60px; color:black;"><span style="background-color:rgb(137, 206, 137);">Site
+        of the day</span>
     </h1>
-    <p style="color: black;">This is a gallery app by <b>Joy Machuka</b></p>
-      <div>
-    <img src="https://ucarecdn.com/257afbc7-9e6d-4984-9939-f83076ad6d84/progressremovebgpreview.png" alt="">
-  </div>
+    <p style="color: black;"><span style="background-color: rgb(240, 155, 240);">This is a gallery app by <b>Joy
+          Machuka</b></span></p>
+    <div>
+      <img src="https://ucarecdn.com/257afbc7-9e6d-4984-9939-f83076ad6d84/progressremovebgpreview.png" alt="">
+    </div>
     <!-- <button type="button" class="btn btn-info btn-rounded">Info</button> -->
-    <a href="https://machukagalleria.herokuapp.com/" class="btn bg-dark btn-rounded" target="_blank"><span style="color:white;">view site</span></a>
+    <a href="https://machukagalleria.herokuapp.com/" class="btn bg-dark btn-rounded" target="_blank"><span
+        style="color:white;">view site</span></a>
   </div>
 
 
@@ -29,27 +32,29 @@
       {% for project in json_projects %}
       <div class="col-md-4">
         <div class="card-group">
-          <div class="card card-personal mb-4">
+          <div class="card card-personal mb-4" style="background-color: rgb(40, 44, 40);color:green">
             <div class="view">
-              <img class="card-img-top" src="{{project.image.url}}" alt="Card image cap">
+              <img class="card-img-top" style="width: 100%;height: 250px;object-fit:fill" src="{{project.image.url}}" alt="Card image cap">
               <a href="#!">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>
 
             <div class="card-body">
-              <h3 style="font-family: 'Cuprum', sans-serif;">{{project.title}}</h3>
+              <h3 style="font-family: 'Cuprum', sans-serif;">{{project.title}} <a href="{{project.link}}"
+                  class="btn bg-dark btn-outline-success btn-rounded" target="_blank"><span
+                    style="color:rgb(218, 241, 197);">View site</span></a></h3>
 
-              <a href="{{project.link}}" target="_blank">view site</a>
+              <p class="card-text" style="color:aquamarine"><b style="color:rgb(9, 241, 164)">project
+                  description:</b>{{project.description}}</p>
 
-              <p class="card-text"><b>project description:</b>{{project.description}}</p>
-            
               <hr>
-              <span><a href="profile"> <img style="border-radius: 50%; width:30px; height:30px; "
-                    src="{{project.avatar }}" alt="image"></a>By
-                <b>{{project.author}}</b></span>
+              <span style="color:rgb(25, 247, 173)"><a href="profile"> <img
+                    style="border-radius: 50%; width:30px; height:30px;color: aquamarine; "
+                    src="{{project.avatar }}"></a><span style="color:rgb(9, 241, 164)">By</span>
+                <b style="color: aquamarine;">{{project.author}}</b></span>
 
-              <p class="card-meta float-right">{{project.date_craeted}}</p>
+              <p class="card-meta float-right" style="color:rgb(9, 241, 164)">{{project.date_craeted}}</p>
 
             </div>
           </div>
