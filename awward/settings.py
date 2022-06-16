@@ -162,7 +162,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
+# https://www.projecttimes.com/wp-content/themes/yootheme/cache/847d4f8f78df52b30767967b49258369-8fdf7211.jpeg
 STAR_RATINGS_RERATE = False
 STAR_RATINGS_RANGE = 5
 STAR_RATINGS_ANONYMOUS = False
