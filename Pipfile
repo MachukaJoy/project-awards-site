@@ -20,6 +20,7 @@ whitenoise = "*"
 django-tinymce = "*"
 django-star-ratings = "*"
 djangorestframework = "==3.12.1"
+gunicorn = "*"
 
 [dev-packages]
 
