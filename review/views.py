@@ -126,3 +126,9 @@ def search_results(request):
         message = "You haven't searched for any term"
 
         return render(request,'search.html',{'message':message})
+
+
+def signout(request):
+    logout(request)
+    messages.success(request,"You have logged out, we will be glad to have you back again")
+    return redirect ("login")

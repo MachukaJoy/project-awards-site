@@ -42,10 +42,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'review',
     'bootstrap4',
-    'crispy_forms',
     'cloudinary',
     'tinymce',
-    'star_ratings',
+    'crispy_forms',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
