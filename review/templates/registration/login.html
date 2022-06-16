@@ -1,51 +1,57 @@
 {%extends "registration/base.html"%}
 {% load bootstrap4 %}
 {% block content %}
-<div class="container">
-  <div class="row">
-    <br>
+<div class="body">
 
-    <!-- <div class="col-md-5" style="margin-top: 50px;"> -->
-      <img src="https://www.projecttimes.com/wp-content/themes/yootheme/cache/847d4f8f78df52b30767967b49258369-8fdf7211.jpeg" alt="insta">
-    </div>
+  <div class="container firstxl">
 
-      {% if form.errors %}
-      <p> Password or Username is incorrect </p>
-      {% endif %}
+    <style>
+      .body {
+        background-image: url('https://assets.website-files.com/5dbfbe5b9bf13e1ebb54e91f/5fbd56302518c9809b51bbda_26uniquedesign.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        background-position: center;
+        text-align: center;
+        overflow-x: hidden;
+      }
+    </style>
 
-      <div class="card" style="width: 20rem; margin-top:70px;">
 
-        <div class="card-body">
-          <h3 class="text-center" style="font-family: 'Lobster Two', cursive;">Awards</h3>
-        </div>
-        <div class="container">
+    <img class="containe"
+      src="https://www.projecttimes.com/wp-content/themes/yootheme/cache/847d4f8f78df52b30767967b49258369-8fdf7211.jpeg"
+      alt="insta" width="550" height="180">
 
-          <form action="/accounts/login/" method="post">
-            {% csrf_token %}
-            {% bootstrap_form form%}
+    {% if form.errors %}
+    <p> Password or Username is incorrect </p>
+    {% endif %}
 
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Login">
+    <div class="card container" style="width: 20rem; margin-top:70px;">
 
-            </div>
+      <div class="card-body">
+        <h3 class="text-center" style="font-family: 'Lobster Two', cursive;">Awards</h3>
+      </div>
+
+      <form action="/accounts/login/" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form%}
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary btn-sm" value="Login">
         </div>
 
         <hr>
         <p class="container">you dont have an account? <a href="/accounts/register/"> Sign Up</a></p>
-      </div>
+    </div>
 
 
-  <!-- </div> -->
+    <!-- </div> -->
 
-  <input type="hidden" name="next" value="{{next}}">
+    <input type="hidden" name="next" value="{{next}}">
 
-  </form>
+    </form>
+  </div>
 </div>
 
-</div>
-<div class="col-md-1"></div>
-
-</div>
-</div>
 
 {% endblock %}
