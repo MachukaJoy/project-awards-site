@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'cloudinary',
     'tinymce',
+    'star_ratings',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -161,6 +162,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+STAR_RATINGS_RERATE = False
+STAR_RATINGS_RANGE = 5
+STAR_RATINGS_ANONYMOUS = False
 
 cloudinary.config(
     cloud_name="machukaj",

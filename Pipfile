@@ -18,6 +18,7 @@ pillow = "*"
 django-registration = "==3.1.1"
 whitenoise = "*"
 django-tinymce = "*"
+django-star-ratings = "*"
 
 [dev-packages]
 
