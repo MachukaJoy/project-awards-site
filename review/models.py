@@ -7,7 +7,8 @@ from tinymce.models import HTMLField
 
 # Create your models here.
 class Profile(models.Model):
-    profile_pic = models.ImageField( upload_to='profile/', blank ='true',default='default.png')
+    # profile_pic = models.ImageField( upload_to='profile/', blank ='true',default='default.png')
+    profile_pic = CloudinaryField('image')
     bio = models.TextField()
     user =models.OneToOneField(User, on_delete = models.CASCADE)
     date_craeted= models.DateField(auto_now_add=True )
@@ -33,7 +34,8 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 class Project(models.Model):
     title = models.TextField(max_length=30)
-    image = models.ImageField(upload_to = 'home/', blank=True)
+    # image = models.ImageField(upload_to = 'home/', blank=True)
+    image = CloudinaryField('image')
     link= models.URLField(max_length=200)
     description = models.TextField(max_length=300)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default='', null=True ,related_name='author')
